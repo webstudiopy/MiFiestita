@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Invitación</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+color:white;
+text-align:center;
+background:url('foto.jpg') center/cover no-repeat fixed;
+overflow:hidden;
+}
+
+.contenido{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+position:relative;
+z-index:2;
+}
+
+.card{
+width:100%;
+max-width:430px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(14px);
+-webkit-backdrop-filter:blur(14px);
+border:1px solid rgba(255,255,255,0.30);
+padding:38px 28px;
+border-radius:28px;
+box-shadow:0 18px 45px rgba(0,0,0,0.35);
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:"";
+position:absolute;
+top:-60px;
+left:-60px;
+width:160px;
+height:160px;
+background:rgba(255,255,255,0.15);
+border-radius:50%;
+filter:blur(10px);
+}
+
+.card::after{
+content:"";
+position:absolute;
+bottom:-70px;
+right:-70px;
+width:180px;
+height:180px;
+background:rgba(255,255,255,0.10);
+border-radius:50%;
+filter:blur(14px);
+}
+
+.card-content{
+position:relative;
+z-index:2;
+}
+
+.etiqueta{
+display:inline-block;
+padding:8px 14px;
+border-radius:999px;
+background:rgba(255,255,255,0.25);
+border:1px solid rgba(255,255,255,0.30);
+font-size:13px;
+margin-bottom:16px;
+letter-spacing:.3px;
+color:#fff;
+}
+
+.card h1{
+margin:0 0 18px;
+font-size:50px;
+line-height:1.05;
+font-weight:800;
+color:#ffffff;
+text-shadow:0 4px 15px rgba(0,0,0,0.45);
+}
+
+.detalles{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin:0 0 24px;
+}
+
+.item{
+background:rgba(255,255,255,0.15);
+border:1px solid rgba(255,255,255,0.25);
+border-radius:16px;
+padding:12px 14px;
+font-size:16px;
+}
+
+.item span{
+display:block;
+font-size:12px;
+color:#ffe6f2;
+margin-bottom:4px;
+text-transform:uppercase;
+letter-spacing:.8px;
+font-weight:600;
+}
+
+.item strong{
+font-size:22px;
+font-weight:700;
+color:#ffffff;
+text-shadow:0 2px 8px rgba(0,0,0,0.35);
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+margin-top:4px;
+padding:14px 24px;
+background:#25D366;
+color:white;
+text-decoration:none;
+border-radius:14px;
+font-weight:bold;
+font-size:18px;
+box-shadow:0 8px 22px rgba(37,211,102,0.35);
+transition:.2s ease;
+}
+
+.btn:hover{
+background:#1ebe5d;
+transform:translateY(-2px);
+}
+
+.intro{
+position:fixed;
+top:0;
+left:0;
+right:0;
+bottom:0;
+display:flex;
+justify-content:center;
+align-items:center;
+background:rgba(0,0,0,0.18);
+z-index:10;
+
+/* ahora dura 3 segundos */
+
+animation:fadeout 3s forwards;
+}
+
+.intro h1{
+font-size:58px;
+text-shadow:0 0 25px rgba(0,0,0,0.55);
+margin:0;
+padding:0 20px;
+color:white;
+}
+
+@keyframes fadeout{
+0%{opacity:1}
+70%{opacity:1}
+100%{opacity:0;visibility:hidden}
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+pointer-events:none;
+z-index:3;
+}
+
+@media (max-width:600px){
+
+.card{
+max-width:360px;
+padding:30px 20px;
+border-radius:24px;
+}
+
+.card h1{
+font-size:38px;
+}
+
+.item strong{
+font-size:18px;
+}
+
+.btn{
+width:100%;
+font-size:17px;
+}
+
+.intro h1{
+font-size:36px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="intro">
+<h1>🎉 Te invito a mi fiesta 🎉</h1>
+</div>
+
+<canvas id="confetti"></canvas>
+
+<div class="contenido">
+<div class="card">
+<div class="card-content">
+
+<div class="etiqueta">Invitación especial</div>
+
+<h1>Cumpleaños de Juan</h1>
+
+<div class="detalles">
+<div class="item">
+<span>Fecha</span>
+<strong>Sábado 25 de Abril</strong>
+</div>
+
+<div class="item">
+<span>Hora</span>
+<strong>21:00 hs</strong>
+</div>
+
+<div class="item">
+<span>Lugar</span>
+<strong>Salón Central</strong>
+</div>
+
+<div class="item">
+<span>TE ESPERAMOS</span>
+<strong>NO FALTES</strong>
+</div>
+
+</div>
+
+<a class="btn"
+href="https://wa.me/595983957615"
+target="_blank">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" viewBox="0 0 24 24">
+<path d="M20.52 3.48A11.82 11.82 0 0012.04 0C5.4 0 .06 5.34.06 11.98c0 2.11.55 4.18 1.6 6.01L0 24l6.2-1.62a11.9 11.9 0 005.84 1.49h.01c6.63 0 11.97-5.34 11.97-11.98a11.9 11.9 0 00-3.5-8.41z"/>
+</svg>
+
+Confirmar por WhatsApp
+</a>
+
+</div>
+</div>
+</div>
+
+<script>
+
+const canvas = document.getElementById("confetti");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas(){
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+}
+
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+let confetti = [];
+
+for(let i=0;i<150;i++){
+confetti.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height-canvas.height,
+r:Math.random()*6+2,
+color:`hsl(${Math.random()*360},100%,50%)`
+});
+}
+
+function draw(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+confetti.forEach(c=>{
+
+ctx.beginPath();
+ctx.fillStyle=c.color;
+ctx.arc(c.x,c.y,c.r,0,Math.PI*2);
+ctx.fill();
+
+c.y+=2;
+
+if(c.y>canvas.height){
+c.y=0;
+}
+
+});
+
+requestAnimationFrame(draw);
+}
+
+draw();
+
+</script>
+
+</body>
+</html>
